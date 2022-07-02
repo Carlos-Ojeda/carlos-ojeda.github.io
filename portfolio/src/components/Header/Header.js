@@ -3,10 +3,10 @@ import { PageHeader, Menu } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 
 const items = [
-    { label:<a href='/portfolio/#about-me'>About Me</a>, key: '1' },
-    { label:<a href='/portfolio/#projects'>Projects</a>, key: '2' },
-    { label:<a href='/portfolio/#skills'>Skills</a>, key: '3' },
-    { label:<a href='/portfolio/#contact'>Contact</a>, key: '4' }
+    { label:<a href='/#about-me'>About Me</a>, key: '1' },
+    { label:<a href='/#projects'>Projects</a>, key: '2' },
+    { label:<a href='/#skills'>Skills</a>, key: '3' },
+    { label:<a href='/#contact'>Contact</a>, key: '4' }
 ];
 
 function Header() {
@@ -15,7 +15,7 @@ function Header() {
         <>
             <PageHeader
                 className="site-page-header"
-                title={<a style={{color:"black"}}key="0" href='/portfolio/#landing'>Carlos Ojeda</a>}
+                title={<a style={{color:"black"}}key="0" href='/#landing'>Carlos Ojeda</a>}
                 extra={[
                     <Menu 
                     className="header-menu"
