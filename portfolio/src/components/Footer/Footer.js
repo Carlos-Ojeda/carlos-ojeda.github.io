@@ -16,7 +16,7 @@ function Footer() {
 
             <p style={{color:"white", textAlign:"center"}}>This page is maintained by myself</p>
             <p style={{color:"white", textAlign:"center"}}>Built with <a href="https://reactjs.org/">React</a> & <a href="https://ant.design/">Ant Design</a></p>
-            <p style={{color:"white", textAlign:"center"}}>Open source on <a href="https://github.com/">GitHub</a></p>
+            <p style={{color:"white", textAlign:"center"}}>Open source on <a href="https://github.com/Carlos-Ojeda/carlos-ojeda.github.io">GitHub</a></p>
         </div>
     );
   }
