@@ -1,0 +1,21 @@
+.landing .salute-title {
+  position:relative;
+  top: calc(65vh - 87px);
+  padding-left: 24px;
+  z-index: 1;
+  text-align: left;
+}
+
+.landing h1 {
+  font-size: 48px;
+  color: white;
+}
+
+.flickering-cursor {
+  animation: blink 1s infinite steps(1);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

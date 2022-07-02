@@ -1,0 +1,9 @@
+@import '~antd/dist/antd.css';
+@import './components/Header/_header.scss';
+@import './components/Landing/_landing.scss';
+@import './components/Landing/SaluteAnimation/_salute-animation.scss';
+@import './components/AboutMe/_about-me.scss';
+@import './components/AboutMe/Collage/_collage.scss';
+@import './components/Projects/_projects.scss';
+@import './components/Skills/_skills.scss';
+@import './components/Footer/_footer.scss';
