@@ -21,7 +21,11 @@ function AboutMe() {
                         <Meta
                             avatar={<Avatar src="https://avatars.githubusercontent.com/u/71744365?v=4" />}
                             title="Hi! I'm Carlos 👋🏼"
-                            description="I am a 21 year-old human being passionate about the world that surround us. I love be in contact with nature, people, and human brains who reflect about life."
+                            // description="I am a 21 year-old human being passionate about nature, people and technology. I am excited to work with people, develop front-end, testing or back-end when a challenging job presents itself. I have to say that I really appreciate when an activity is challenging, where my colleagues and I enhance our relationship by learning new concepts, theory and technologies."
+                            // description="I am a 21 year-old human being passionate about nature, people and technology. I am excited to work with people, develop front-end, testing or back-end when a challenging job presents itself. I have to say that I really appreciate when an activity is challenging, where my colleagues and I grow by learning new technologies."
+                            // description="I am a 21 year-old human being passionate about nature, people and technology. Excited about working with people, developing front-end, automated testing and back-end (when challenging work comes up). I really enjoy the work when my colleagues and I improve our relationship by learning new concepts, theory and technologies."
+                            // description="I am a 21 year-old human being passionate about nature, people and technology. I really enjoy working with people, developing front-end, automated testing, and back-end (when a challenging job comes up). Most of all, I love to see when my colleges and I grow by learning new stuff."
+                            description="I am a 21 year-old human being passionate about nature, people and technology. I really enjoy working with people, developing front-end, automated testing, and back-end (when a challenging job comes up). Most of all, I love to see when my colleges and I grow by learning new things."
                         />
                     </Card>
                 </Col>
