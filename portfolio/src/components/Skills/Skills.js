@@ -2,6 +2,8 @@ import React from 'react';
 import { Col, Row, Divider, Tag } from 'antd';
 import { ReactComponent as LoCarbon } from './carbon.svg';
 import { 
+            SiFlask,
+            SiArduino,
             SiCplusplus, 
             SiJavascript, 
             SiPython, 
@@ -10,7 +12,6 @@ import {
             SiHtml5,
             SiReact,
             SiPostgresql,
-            SiMongodb,
             SiFirebase,
             SiGithubactions,
             SiDocker,
@@ -61,14 +62,15 @@ function Skills() {
                         <Tag icon={<FaUnity className='anticon' />} color="cyan">Unity</Tag>
                         <Tag icon={<GrMysql className='anticon' />} color="blue">MySQL</Tag>
                         <Tag icon={<SiPostgresql className='anticon' />} color="geekblue">PostgreSQL</Tag>
-                        <Tag icon={<SiMongodb className='anticon' />} color="purple">MongoDB</Tag>
-                        <Tag icon={<SiFirebase className='anticon' />} color="magenta">Firebase</Tag>
-                        <Tag icon={<SiIbm className='anticon' />} color="red">IBM Cloud DB2</Tag>
-                        <Tag icon={<SiGithubactions className='anticon' />} color="volcano">Github Actions</Tag>
-                        <Tag icon={<SiDocker className='anticon' />} color="orange">Docker</Tag>
-                        <Tag icon={<SiCloudfoundry className='anticon' />} color="gold">IBM Cloud Foundry</Tag>
-                        <Tag icon={<SiPostman className='anticon' />} color="lime">Postman</Tag>
-                        <Tag icon={<SiCypress className='anticon' />} color="green">Cypress</Tag>
+                        <Tag icon={<SiFirebase className='anticon' />} color="purple">Firebase</Tag>
+                        <Tag icon={<SiIbm className='anticon' />} color="magenta">IBM Cloud DB2</Tag>
+                        <Tag icon={<SiGithubactions className='anticon' />} color="red">Github Actions</Tag>
+                        <Tag icon={<SiDocker className='anticon' />} color="volcano">Docker</Tag>
+                        <Tag icon={<SiCloudfoundry className='anticon' />} color="orange">IBM Cloud Foundry</Tag>
+                        <Tag icon={<SiPostman className='anticon' />} color="gold">Postman</Tag>
+                        <Tag icon={<SiCypress className='anticon' />} color="lime">Cypress</Tag>
+                        <Tag icon={<SiFlask className='anticon' />} color="green">Flask</Tag>
+                        <Tag icon={<SiArduino className='anticon' />} color="cyan">Arduino</Tag>
                     </div>
                 </Col>
             </Row>

@@ -1,3 +1,14 @@
 .projects {
   padding: 75px 24px;
 }
+.carousel-proyect-image {
+    display: block !important;
+    width: inherit !important;
+    max-height: 160px !important;
+    object-fit: cover !important;
+}
+
+.projects .ant-tag {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
