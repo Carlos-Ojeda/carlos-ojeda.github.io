@@ -149,7 +149,7 @@ function Projects() {
                                 )}
                 </Col>
                 <Col xs={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
-                    {projectCard("MazeRunner", 
+                    {projectCard("Endless Runner", 
                                   "A platformer game with an endless runner and collectible objects.", 
                                   "/assets/mazerunner/mazerunner-0.png", "Game Screenshot 1",
                                   "/assets/mazerunner/mazerunner-1.png", "Game Screenshot 2",
