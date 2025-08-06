@@ -1,6 +1,31 @@
-.carousel-image {
-    display: block !important;
-    width: inherit !important;
-    height: 160px !important;
-    object-fit: cover !important;
+.chat-gallery {
+  /* ensure the carousel area has some height inside the message */
+  .slick-slider,
+  .slick-list,
+  .slick-track {
+    width: 100%;
+  }
+
+  .carousel-image-container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+
+  img.carousel-image {
+    margin-top: 0;
+    width: auto;
+    height: auto;
+    max-height: 160px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: block;
+  }
 }
+
+
+
+

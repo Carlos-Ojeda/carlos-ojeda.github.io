@@ -1,36 +1,36 @@
 import React from 'react';
-import { Row, Col, Card, Avatar, Divider} from 'antd';
-import { GithubOutlined, LinkedinOutlined, MailOutlined } from '@ant-design/icons';
-import Collage from './Collage';
-const { Meta } = Card;
+import { Row, Col } from 'antd';
+import { Section } from '../shared';
+import PersonalIntroduction from './components/PersonalIntroduction';
+import EmploymentSection from './components/EmploymentSection';
+import EducationSection from './components/EducationSection';
+import { DESIGN_SYSTEM } from '../../config/designSystem';
 
-function AboutMe() {
+const AboutMe = () => {
     return (
-        <>
-            <Row className="about-me" id="about-me" justify="space-around" align="middle" gutter={[0, 24]}>
-                <Divider orientation="left">About Me</Divider>           
-                <Col xs={{ span: 24}} lg={{ span: 6 }}>
-                    <Card
-                        hoverable={true}
-                        actions={[
-                            <a href="https://www.linkedin.com/in/carlos-noe-ojeda-ang"><LinkedinOutlined key="linkedin" /></a>,
-                            <a href="https://github.com/Carlos-Ojeda"><GithubOutlined key="github" /></a>,
-                            <a href="mailto:carlosnoel_ojedaa@icloud.com"><MailOutlined key="email" /></a>,
-                        ]}
-                    >
-                        <Meta
-                            avatar={<Avatar src="https://avatars.githubusercontent.com/u/71744365?v=4" />}
-                            title="Hi! I'm Carlos 👋🏼"
-                            description="I am a 21 year-old human being passionate about nature, people and technology. I really enjoy working with people, developing front-end, automated testing and back-end (when a challenging job comes up). Most of all, I love when me and my colleges grow by learning new things."
-                        />
-                    </Card>
+        <Section 
+            id="about-me"
+            titleKey="aboutMe.title"
+            subtitleKey="aboutMe.subtitle"
+            className="about-me-section"
+            style={{
+                padding: DESIGN_SYSTEM.components.sections.padding,
+            }}
+        >
+            <Row gutter={[8, 0]} className="about-content">
+                {/* Left Column - Personal Introduction */}
+                <Col xs={24} md={24} lg={10} xl={10}>
+                    <PersonalIntroduction />
                 </Col>
-                <Col xs={{ span: 24}} lg={{ span: 12 }}>
-                    <Collage/>
+
+                {/* Right Column - Employment & Education */}
+                <Col xs={24} md={24} lg={14} xl={14}>
+                    <EmploymentSection />
+                    <EducationSection />
                 </Col>
             </Row>
-        </>
+        </Section>
     );
-  }
-  
-  export default AboutMe;
+};
+
+export default AboutMe; 

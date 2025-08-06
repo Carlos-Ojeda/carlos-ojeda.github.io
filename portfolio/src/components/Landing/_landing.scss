@@ -1,19 +1,138 @@
 .landing {
-  background: rgb(0,0,0);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  height: calc(100vh - 87px);
+  background: var(--gradient-dark);
   text-align: center;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: clip;
+  width: 100%;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-particles-1), var(--gradient-particles-2);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .hero-section {
+    .subtitle {
+    }
+    
+    .description {
+    }
+    
+    .cta-buttons {
+      button {
+        &.cta-primary {
+          &:hover {
+            transform: var(--button-transform-hover);
+            box-shadow: var(--shadow-button-hover);
+          }
+        }
+        
+        &.cta-secondary {
+          &:hover {
+            transform: var(--button-transform-hover);
+            box-shadow: var(--shadow-secondary-hover);
+          }
+        }
+      }
+    }
+  }
+  
+  .scroll-indicator {
+    &:hover {
+      transform: var(--button-transform-hover);
+    }
+    
+    .scroll-arrow {
+    }
+    
+    span {
+    }
+  }
 }
 
-.landing .particles {
-  position: absolute;
-  top: 87px;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 87px);
-  z-index: 0;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--fade-in-distance));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(var(--scroll-bounce-distance));
+  }
+  60% {
+    transform: translateY(var(--scroll-bounce-distance-small));
+  }
+}
+
+/* Responsive adjustments for landing */
+@media (max-width: 768px) {
+  .landing {
+    .landing-language-selector {
+      top: var(--landing-language-selector-mobile-top);
+      right: var(--landing-language-selector-mobile-right);
+    }
+
+    .landing-content {
+      padding: var(--landing-content-mobile-padding);
+      
+      .hero-section {
+        .subtitle {
+          font-size: var(--font-size-landing-subtitle-mobile) !important;
+          margin: var(--spacing-lg) 0;
+        }
+        
+        .description {
+          font-size: var(--font-size-landing-description-mobile) !important;
+          margin: 0 auto var(--spacing-xl);
+        }
+        
+        .cta-buttons {
+          gap: var(--spacing-md);
+          margin-top: var(--spacing-xl);
+          
+          button {
+            min-width: var(--button-min-width-mobile);
+            padding: var(--button-padding-mobile);
+            font-size: var(--font-size-landing-button-mobile) !important;
+          }
+        }
+      }
+    }
+    
+    .scroll-indicator {
+      bottom: var(--landing-scroll-indicator-mobile-bottom);
+      
+      span {
+        font-size: var(--font-size-scroll-indicator-mobile) !important;
+      }
+    }
+  }
 }

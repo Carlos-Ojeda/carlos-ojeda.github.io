@@ -1,13 +1,654 @@
+/* ========================================
+   GLOBAL RESET & BASE STYLES
+   ======================================== */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: var(--font-family-primary);
+}
+
+/* ========================================
+   CSS VARIABLES - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+:root {
+  /* Map design system values to CSS variables for compatibility */
+  --primary-color: #1890ff;
+  --primary-dark: #096dd9;
+  --primary-light: #40a9ff;
+  --secondary-color: #f8f9fa;
+  --accent-color: #52c41a;
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --error-color: #ff4d4f;
+  
+  /* Text Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --text-inverse: #ffffff;
+  
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f5f5f5;
+  --bg-dark: #001529;
+  --bg-dark-secondary: #003a70;
+  --bg-chat-bubble: #f7f9fc;
+  --bg-hover-light: #f0f8ff;
+  --bg-overlay-light: rgba(255, 255, 255, 0.1);
+  --bg-overlay-dark: rgba(0, 0, 0, 0.1);
+  --bg-button-secondary: rgba(224, 224, 224, 0.1);
+  --bg-button-primary-hover: rgba(9, 109, 217, 0.9);
+  --bg-indicator: rgba(24, 144, 255, 0.16);
+  --bg-dot-inactive: #9a9a9a;
+  --bg-dot-active: rgba(24, 144, 255, 0.8);
+  --bg-dot-hover: rgba(24, 144, 255, 0.6);
+  --bg-carousel-dots: rgb(96, 120, 143);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  --gradient-secondary: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  --gradient-white-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --gradient-chat-bubble: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  --gradient-dark: linear-gradient(135deg, #000d1a 0%, #002a4a 100%);
+  --gradient-footer: linear-gradient(135deg, #001529 0%, #003a70 100%);
+  --gradient-scroll-arrow: linear-gradient(to bottom, #e0e0e0, transparent);
+  --gradient-particles-1: radial-gradient(circle at 30% 20%, rgba(24, 144, 255, 0.05) 0%, transparent 50%);
+  --gradient-particles-2: radial-gradient(circle at 70% 80%, rgba(24, 144, 255, 0.03) 0%, transparent 50%);
+  
+  /* Typography */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 42px;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* Border Colors */
+  --border-light: #e8e8e8;
+  --border-medium: #d9d9d9;
+  --border-primary: #1890ff;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-overlay-light: rgba(255, 255, 255, 0.2);
+  --border-overlay-dark: rgba(255, 255, 255, 0.1);
+  --border-transparent: transparent;
+  
+  /* Spacing System */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 80px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 50%;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.15);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Z-Index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal: 1040;
+  --z-popover: 1050;
+  --z-tooltip: 1060;
+
+  /* Component-specific variables */
+  --header-height: 80px;
+  --header-height-value: 80px;
+  --button-transform-hover: translateY(-2px);
+  --shadow-button-hover: 0 4px 8px rgba(24, 144, 255, 0.4);
+  --shadow-secondary-hover: 0 4px 15px rgba(224, 224, 224, 0.07);
+  --fade-in-distance: 30px;
+  --scroll-bounce-distance: 10px;
+  --scroll-bounce-distance-small: 5px;
+  --landing-language-selector-mobile-top: 16px;
+  --landing-language-selector-mobile-right: 16px;
+  --landing-content-mobile-padding: 0 16px;
+  --landing-scroll-indicator-mobile-bottom: 32px;
+  --button-min-width-mobile: 120px;
+  --button-padding-mobile: 12px 24px;
+  --font-size-landing-subtitle-mobile: 22px;
+  --font-size-landing-description-mobile: 14px;
+  --font-size-landing-button-mobile: 13px;
+  --font-size-scroll-indicator-mobile: 12px;
+  
+  /* Responsive font sizes */
+  --responsiveFontSizes-mobile-sectionTitle: 20px;
+  --responsiveFontSizes-mobile-sectionSubtitle: 14px;
+  --responsiveFontSizes-mobile-cardTitle: 16px;
+  --responsiveFontSizes-mobile-cardDescription: 14px;
+  --responsiveFontSizes-mobile-contactInfoTitle: 12px;
+  --responsiveFontSizes-mobile-contactInfoText: 12px;
+  --responsiveFontSizes-mobile-contactIcon: 18px;
+  --responsiveFontSizes-mobile-button: 13px;
+  --responsiveFontSizes-mobile-input: 13px;
+  --responsiveFontSizes-mobile-formLabel: 12px;
+  --responsiveFontSizes-mobile-tag: 11px;
+  
+  /* Component-specific variables */
+  --components-buttons-contact-height: 48px;
+  --components-buttons-contact-width: 100%;
+  --components-contact-iconSize: 48px;
+  --components-contact-iconFontSize: 28px;
+  --components-forms-inputBorderRadius: 8px;
+  --components-forms-focusShadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  --components-tags-margin: 4px;
+  --components-tags-padding: 6px 12px;
+  --components-tags-borderRadius: 4px;
+  --components-tags-transformHover: translateY(-2px);
+  --components-tags-iconMargin: 6px;
+  --components-cards-transformHover: translateY(-6px);
+  --components-animations-loadingDuration: 1.5s infinite;
+  --shadow-button: 0 4px 12px rgba(24, 144, 255, 0.3);
+  --gradient-loading: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  --gradient-divider: linear-gradient(90deg, rgba(49, 109, 238, 0.01), rgba(0, 49, 156, 0.057), rgba(49, 109, 238, 0.01));
+}
+
+/* ========================================
+   GLOBAL STYLES - MINIMAL & NON-INTRUSIVE
+   ======================================== */
+
+/* Remove aggressive global font forcing - let components handle their own fonts */
+/* Only apply to basic elements that don't have specific styling */
+body, p, span, div {
+  font-family: var(--font-family-primary);
+}
+
+/* ========================================
+   COMPONENT STYLES - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+
+/* Consistent card styles */
+.ant-card {
+  transition: var(--transition-normal);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  background: var(--gradient-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.ant-card:hover {
+  transform: var(--components-cards-transformHover);
+  box-shadow: var(--shadow-xl) !important;
+}
+
+/* Consistent button styles */
+.ant-btn-primary {
+  background: var(--gradient-primary);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.ant-btn-primary:hover {
+  transform: var(--button-transform-hover);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Contact page specific button styles */
+.contact-send-button {
+  height: var(--components-buttons-contact-height) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-bold) !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--gradient-primary) !important;
+  border: none !important;
+  box-shadow: var(--shadow-button) !important;
+  width: var(--components-buttons-contact-width) !important;
+}
+
+/* Unified card styles for JavaScript components */
+.unified-card {
+  height: 100% !important;
+  background: var(--gradient-white-card) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-normal) !important;
+}
+
+/* ========================================
+   UTILITY CLASSES - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+
+/* Typography Classes */
+.text-primary { color: var(--text-primary) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-inverse { color: var(--text-inverse) !important; }
+.text-brand { color: var(--primary-color) !important; }
+
+/* Font Size Classes */
+.text-xs { font-size: var(--font-size-xs) !important; }
+.text-sm { font-size: var(--font-size-sm) !important; }
+.text-base { font-size: var(--font-size-base) !important; }
+.text-lg { font-size: var(--font-size-lg) !important; }
+.text-xl { font-size: var(--font-size-xl) !important; }
+.text-2xl { font-size: var(--font-size-2xl) !important; }
+
+/* Font Weight Classes */
+.font-normal { font-weight: var(--font-weight-normal) !important; }
+.font-medium { font-weight: var(--font-weight-medium) !important; }
+.font-bold { font-weight: var(--font-weight-bold) !important; }
+
+/* Text Alignment Classes */
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+/* Display Classes */
+.block { display: block !important; }
+.inline-block { display: inline-block !important; }
+.flex { display: flex !important; }
+
+/* Spacing Classes */
+.mb-xs { margin-bottom: var(--spacing-xs) !important; }
+.mb-sm { margin-bottom: var(--spacing-sm) !important; }
+.mb-md { margin-bottom: var(--spacing-md) !important; }
+.mb-lg { margin-bottom: var(--spacing-lg) !important; }
+.mb-xl { margin-bottom: var(--spacing-xl) !important; }
+.mb-2xl { margin-bottom: var(--spacing-2xl) !important; }
+
+/* ========================================
+   COMPONENT-SPECIFIC CLASSES
+   ======================================== */
+
+.section-title {
+  text-align: center !important;
+  color: var(--primary-color) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: var(--font-weight-bold) !important;
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+.section-subtitle {
+  text-align: center !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  display: block !important;
+  margin-bottom: var(--spacing-2xl) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Unified Title Style for Cards and Messages */
+.card-title,
+.chat-title {
+  color: var(--primary-color) !important;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-medium) !important;
+  margin-bottom: var(--spacing-md) !important;
+  text-align: center !important;
+}
+
+/* Left-aligned titles for Projects and AboutMe */
+.card-title.left-align,
+.chat-title.left-align {
+  text-align: left !important;
+}
+
+.card-description {
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-relaxed) !important;
+  color: var(--text-secondary) !important;
+  margin-bottom: var(--spacing-2xl) !important;
+  text-align: center !important;
+}
+
+/* Unified Body Text Style for Chat and Projects */
+.project-description,
+.chat-text {
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-relaxed) !important;
+  color: var(--text-secondary) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+.contact-info-title {
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-medium) !important;
+  color: var(--text-primary) !important;
+}
+
+.contact-info-text {
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-normal) !important;
+  color: var(--text-muted) !important;
+  display: block !important;
+}
+
+.contact-icon {
+  color: white !important;
+  width: var(--components-contact-iconSize) !important;
+  height: var(--components-contact-iconSize) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: var(--components-contact-iconFontSize) !important;
+  margin-right: var(--spacing-md) !important;
+  transition: var(--transition-normal) !important;
+}
+
+/* ========================================
+   FORM STYLES - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+
+.ant-form-item-label > label {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.ant-input,
+.ant-input-affix-wrapper {
+  border-radius: var(--components-forms-inputBorderRadius);
+  border: 1px solid var(--border-medium);
+  transition: var(--transition-normal);
+  font-size: var(--font-size-sm);
+}
+
+.ant-input:hover,
+.ant-input-affix-wrapper:hover {
+  border-color: var(--primary-color);
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--primary-color);
+  box-shadow: var(--components-forms-focusShadow);
+}
+
+/* ========================================
+   TAG STYLES - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+
+.skills-tags .ant-tag,
+.project-tags .ant-tag {
+  margin: var(--components-tags-margin);
+  font-weight: var(--font-weight-medium);
+  padding: var(--components-tags-padding);
+  border-radius: var(--components-tags-borderRadius);
+  transition: var(--transition-normal);
+  /* Keep default Ant Design colors - only unify spacing, typography, and effects */
+}
+
+.skills-tags .ant-tag:hover,
+.project-tags .ant-tag:hover {
+  transform: var(--components-tags-transformHover);
+  box-shadow: var(--shadow-sm);
+  /* Preserve original colors on hover */
+}
+
+/* Size variants for tags */
+.skills-tags .ant-tag {
+  font-size: var(--font-size-sm);
+}
+
+.project-tags .ant-tag {
+  font-size: var(--font-size-xs);
+}
+
+/* Icon styles in skills tags */
+.skills-tags .ant-tag .anticon {
+  margin-right: var(--components-tags-iconMargin);
+  font-size: var(--font-size-sm);
+}
+
+/* General tag fallback styles */
+.ant-tag {
+  transition: var(--transition-normal);
+  border-radius: var(--components-tags-borderRadius);
+  font-weight: var(--font-weight-medium);
+}
+
+.ant-tag:hover {
+  transform: var(--components-tags-transformHover);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   TYPOGRAPHY STYLES - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+
+.ant-typography h1,
+.ant-typography h2,
+.ant-typography h3,
+.ant-typography h4,
+.ant-typography h5,
+.ant-typography h6 {
+  color: var(--primary-color);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================
+   LAYOUT & SPACING CLASSES
+   ======================================== */
+
+.section-padding {
+  padding: var(--spacing-4xl) var(--spacing-xl);
+}
+
+.section-padding-mobile {
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.trust-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--success-color);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================
+   ANIMATIONS - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--fade-in-distance));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES - COMPATIBLE WITH DESIGN SYSTEM
+   ======================================== */
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+  
+  /* Global mobile font size reductions */
+  .section-title {
+    font-size: var(--responsiveFontSizes-mobile-sectionTitle) !important;
+  }
+  
+  .section-subtitle {
+    font-size: var(--responsiveFontSizes-mobile-sectionSubtitle) !important;
+  }
+  
+  .card-title,
+  .chat-title {
+    font-size: var(--responsiveFontSizes-mobile-cardTitle) !important;
+  }
+  
+  .card-description,
+  .project-description,
+  .chat-text {
+    font-size: var(--responsiveFontSizes-mobile-cardDescription) !important;
+  }
+  
+  .contact-info-title {
+    font-size: var(--responsiveFontSizes-mobile-contactInfoTitle) !important;
+  }
+  
+  .contact-info-text {
+    font-size: var(--responsiveFontSizes-mobile-contactInfoText) !important;
+  }
+  
+  .contact-icon {
+    font-size: var(--responsiveFontSizes-mobile-contactIcon) !important;
+  }
+  
+  /* Ant Design components */
+  .ant-typography h1 { font-size: 24px !important; }
+  .ant-typography h2 { font-size: 20px !important; }
+  .ant-typography h3 { font-size: 18px !important; }
+  .ant-typography h4 { font-size: 16px !important; }
+  .ant-typography h5 { font-size: 14px !important; }
+  .ant-typography h6 { font-size: 12px !important; }
+  
+  .ant-btn {
+    font-size: var(--responsiveFontSizes-mobile-button) !important;
+  }
+  
+  .ant-input,
+  .ant-input-affix-wrapper {
+    font-size: var(--responsiveFontSizes-mobile-input) !important;
+  }
+  
+  .ant-form-item-label > label {
+    font-size: var(--responsiveFontSizes-mobile-formLabel) !important;
+  }
+  
+  .ant-tag {
+    font-size: var(--responsiveFontSizes-mobile-tag) !important;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY & UTILITY STYLES
+   ======================================== */
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus indicators for accessibility */
+.ant-btn:focus,
+.ant-input:focus,
+.ant-select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Professional loading states */
+.loading-skeleton {
+  background: var(--gradient-loading);
+  background-size: 200% 100%;
+  animation: loading var(--components-animations-loadingDuration) infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Subtle section divider */
+.ant-divider {
+  margin: var(--spacing-3xl) auto;
+  border: none;
+  height: 1px;
+  background: var(--gradient-divider);
+}
+
+/* Hide browser scrollbars but keep scrolling */
+html,
+body {
+  -ms-overflow-style: none; /* IE and old Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

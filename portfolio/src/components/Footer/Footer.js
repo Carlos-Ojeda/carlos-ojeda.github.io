@@ -1,25 +1,44 @@
 import React from 'react';
 import { Col, Row, Divider } from 'antd';
-import { GithubOutlined, TwitterOutlined, LinkedinOutlined, MailOutlined } from '@ant-design/icons';
+import OpenSourceSection from './components/OpenSourceSection';
+import TechnologiesSection from './components/TechnologiesSection';
+import ContactSection from './components/ContactSection';
+import CopyrightSection from './components/CopyrightSection';
 
-function Footer() {
+const Footer = () => {
     return (
-        <div className='footer'>
-            <Divider id="contact" style={{color:"white", borderTopColor:"rgb(131, 131, 131)"}}>Contact Me</Divider>
-            
-            <Row style={{paddingBottom:"24px"}}justify='space-evenly content'>
-            <Col><a href="https://www.linkedin.com/in/carlos-ojd/"><LinkedinOutlined className='footer-icon' key="linkedin" /></a></Col>
-                <Col><a href="https://github.com/Carlos-Ojeda"><GithubOutlined className='footer-icon' key="github" /></a></Col>
-                <Col><a href="https://twitter.com/CarlosOGD"><TwitterOutlined className='footer-icon' key="twitter" /></a></Col>
-                <Col><a href="mailto:carlosnoel_ojedaa@icloud.com"><MailOutlined className='footer-icon' key="email" /></a></Col>
-            </Row>
+        <div className="footer">
+            <div className="footer-content">
+                {/* Main Footer Section */}
+                <Row gutter={[8, 32]} className="footer-main" justify="space-between">
+                    {/* Open Source */}
+                    <Col xs={12} sm={12} md={6} lg={6}>
+                        <OpenSourceSection />
+                    </Col>
 
-            <p style={{color:"white", textAlign:"center"}}>This page is maintained by myself</p>
-            <p style={{color:"white", textAlign:"center"}}>Built with <a href="https://reactjs.org/">React</a> & <a href="https://ant.design/">Ant Design</a></p>
-            <p style={{color:"white", textAlign:"center"}}>Open source on <a href="https://github.com/Carlos-Ojeda/carlos-ojeda.github.io">GitHub</a></p>
+                    {/* Technologies */}
+                    <Col xs={12} sm={12} md={6} lg={6}>
+                        <TechnologiesSection />
+                    </Col>
+
+                    {/* Contact Info */}
+                    <Col xs={12} sm={12} md={6} lg={6}>
+                        <ContactSection />
+                    </Col>
+                </Row>
+
+                {/* Divider */}
+                <Divider className="footer-divider" />
+
+                {/* Copyright Section */}
+                <Row justify="center" align="middle" className="footer-bottom">
+                    <Col xs={24}>
+                        <CopyrightSection />
+                    </Col>
+                </Row>
+            </div>
         </div>
     );
-  }
-  
-  export default Footer;
-  
+};
+
+export default Footer;

@@ -1,3 +1,543 @@
-.about-me {
-  padding: 75px 24px;
+/* About Me Section Styles */
+.about-me-section {
+  min-height: 100vh;
+  width: 100%;
+
+  /* Section Header */
+  .section-header {
+    .section-title {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-sm);
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: var(--font-size-lg);
+      display: block;
+      margin-bottom: 0;
+      color: var(--text-muted);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--line-height-normal);
+    }
+  }
+
+  /* Main Content Area */
+  .about-content {
+    margin-top: var(--spacing-md);
+  }
+  
+  /* Personal Card Styles */
+  .personal-card {
+    margin-bottom: var(--spacing-md);
+    
+    &.left-card {
+      height: 100%;
+      background: transparent;
+      border: none;
+    }
+
+    /* Collapsed card spacing */
+    &.collapsed {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    /* Chat Text Styles */
+    .chat-text {
+      padding: 0px 5px 0px 15px;
+      /* Font styles inherited from global .chat-text in index.css */
+    }
+
+    /* Chat Row Layout */
+    .chat-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+      width: 100%;
+      margin-bottom: 0;
+    }
+    
+    /* Mobile Chat Row Adjustments */
+    @media (max-width: 768px) {
+      .chat-row {
+        gap: var(--spacing-sm);
+      }
+    }
+    
+    /* Avatar Styles */
+    .chat-avatar {
+      border-radius: 50% !important;
+      overflow: hidden;
+      width: 48px !important;
+      height: 48px !important;
+      flex: 0 0 48px;
+      object-fit: cover;
+    }
+    
+    /* Avatar Placeholder (for education card) */
+    .avatar-placeholder {
+      width: 48px !important;
+      height: 48px !important;
+      flex: 0 0 48px;
+    }
+    
+    /* Chat Bubble Styles */
+    .chat-bubble {
+      width: calc(100% - 60px);
+      max-width: calc(100% - 60px);
+      padding: var(--spacing-sm) 14px;
+      border-radius: var(--radius-xl);
+      font-size: var(--font-size-sm);
+      margin-top: 0;
+      border-top-left-radius: 2px;
+      line-height: var(--line-height-relaxed);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+      background: var(--gradient-chat-bubble);
+      position: relative;
+      animation: fadeInUp 500ms ease both;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin-bottom: 0;
+      transition: var(--transition-normal);
+      
+      /* Collapsed State */
+      &.collapsed {
+        max-height: 100px;
+        overflow: hidden;
+        padding: var(--spacing-sm) 14px;
+        
+        .chat-text,
+        .chat-gallery {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: var(--transition-normal);
+          max-height: 0;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .chat-meta {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: var(--transition-normal);
+          max-height: 0;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+        }
+        
+        .chat-title {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    /* Chat Title Styles */
+    .chat-title {
+      padding: 0px 5px 0px 15px;
+      /* Font styles inherited from global .chat-title in index.css */
+      
+      /* Clickable Title Styles */
+      &.clickable-title {
+        transition: var(--transition-normal);
+        position: relative;
+        
+        &:hover {
+          color: var(--primary-color);
+          transform: translateY(-1px);
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+        
+        /* Collapse/Expand Icon */
+        &::after {
+          content: '−';
+          position: absolute;
+          right: var(--spacing-sm);
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+          font-weight: bold;
+          opacity: 0;
+          transition: var(--transition-normal);
+          color: var(--text-muted);
+        }
+        
+        &:hover::after {
+          opacity: 1;
+        }
+        
+        &.collapsed::after {
+          content: '+';
+          opacity: 1;
+          right: var(--spacing-sm);
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+          background: transparent;
+          border-radius: 0;
+          width: auto;
+          height: auto;
+          display: inline;
+          box-shadow: none;
+          border: none;
+        }
+      }
+    }
+
+    /* Chat Text Spacing */
+    .chat-text + .chat-text { 
+      margin-top: var(--spacing-sm);
+    }
+    
+    /* Chat Meta (timestamp) */
+    .chat-meta {
+      font-size: var(--font-size-sm);
+      color: var(--text-muted);
+      text-align: right;
+      margin-top: var(--spacing-sm);
+      position: relative;
+    }
+  }
+  
+  /* Employment Carousel Styles */
+  .carousel-wrapper {
+    .employment-carousel {
+      .employment-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: var(--spacing-xl);
+        background: var(--gradient-footer);
+        border-radius: var(--radius-lg);
+        color: #e6f4ff;
+      }
+
+      .employment-header-row {
+        margin-bottom: var(--spacing-lg);
+      }
+      
+      .company-header-mobile {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        width: 100%;
+      }
+      
+      .company-info {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+      }
+      
+      .program-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+      }
+      
+      .program-title { 
+        margin: 0; 
+        color: #ffffff; 
+        font-size: var(--font-size-lg); 
+        font-weight: var(--font-weight-medium); 
+      }
+      
+      .institution-text { 
+        color: rgba(230,244,255,0.8); 
+        font-size: var(--font-size-sm); 
+        margin: 0;
+      }
+      
+      .company-logo { 
+        border: 2px solid var(--border-overlay-light); 
+      }
+      
+      .company-title { 
+        margin: 0; 
+        color: #ffffff; 
+        font-size: var(--font-size-lg); 
+        font-weight: var(--font-weight-medium); 
+      }
+      
+      .date-text { 
+        color: rgba(230,244,255,0.8); 
+        font-size: var(--font-size-sm); 
+        white-space: nowrap; 
+      }
+
+      .position-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .position-title { 
+        color: rgba(79, 178, 254, 0.916); 
+        margin: 0; 
+        font-size: var(--font-size-base); 
+        font-weight: var(--font-weight-medium); 
+      }
+      
+      .position-date { 
+        color: rgba(230,244,255,0.7); 
+        font-size: var(--font-size-sm); 
+      }
+      
+      .bullet-list {
+        margin: 0 0 var(--spacing-md) 0;
+        padding-left: 18px;
+        color: rgba(230,244,255,0.9);
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-relaxed);
+      }
+      
+      .bullet-list li { 
+        margin-bottom: var(--spacing-xs); 
+        font-size: var(--font-size-sm); 
+      }
+      
+      .employment-slide {
+        padding: var(--spacing-lg);
+      }
+      
+      /* Carousel Dots */
+      .slick-dots {
+        li {
+          button {
+            background: var(--bg-dot-inactive);
+            transition: var(--transition-normal);
+          }
+          
+          &.slick-active button {
+            background: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Design - Single Column Layout */
+@media (max-width: 991px) {
+  .about-me-section {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    
+    /* Mobile Avatar Adjustments */
+    .chat-avatar {
+      width: 28px !important;
+      height: 28px !important;
+      flex: 0 0 28px;
+    }
+    
+    /* Hide avatars except for the first greeting message */
+    .personal-card:not(.left-card) .chat-avatar,
+    .personal-card:not(.left-card) .avatar-placeholder {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      flex: 0 0 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: absolute !important;
+      left: -9999px !important;
+      visibility: hidden !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+    }
+    
+    /* Adjust chat bubble width when avatar is hidden */
+    .personal-card:not(.left-card) .chat-bubble {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    
+    /* Add margin to align with the greeting message */
+    .personal-card:not(.left-card) {
+      margin-left: 60px !important;
+      margin-bottom: var(--spacing-sm) !important;
+    }
+    
+    /* Maintain consistent spacing when avatars are hidden */
+    .personal-card:not(.left-card) .chat-row {
+      gap: 0 !important;
+    }
+    
+    /* Mobile Chat Bubble Adjustments */
+    .chat-bubble {
+      padding: var(--spacing-sm) 14px;
+      margin-bottom: 0;
+    }
+    
+    /* Mobile Section Header */
+    .section-header {
+      margin-bottom: var(--spacing-md);
+    }
+    
+    /* Mobile Employment Carousel */
+    .carousel-wrapper {
+      .employment-carousel {
+        .employment-slide {
+          padding: var(--spacing-lg) var(--spacing-sm);
+        }
+        
+        .employment-card {
+          padding: var(--spacing-lg);
+        }
+        
+        /* Mobile Employment Header */
+        .employment-header-row {
+          margin-bottom: var(--spacing-md);
+        }
+        
+        .company-header-mobile {
+          display: flex;
+          align-items: flex-start;
+          gap: 6px;
+          width: 100%;
+          margin-bottom: var(--spacing-sm);
+        }
+        
+        .company-logo {
+          flex-shrink: 0;
+          width: 32px !important;
+          height: 32px !important;
+        }
+        
+        .company-info {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--spacing-sm);
+        }
+        
+        .program-info {
+          width: 100%;
+        }
+        
+        .program-title {
+          font-size: var(--font-size-base) !important;
+          font-weight: var(--font-weight-bold) !important;
+          margin: 0 !important;
+          color: #ffffff;
+          line-height: 1.2;
+        }
+        
+        .institution-text {
+          font-size: var(--font-size-xs) !important;
+          margin: 0;
+          color: rgba(230,244,255,0.8);
+        }
+        
+        .company-title {
+          font-size: var(--font-size-base) !important;
+          font-weight: var(--font-weight-bold) !important;
+          margin: 0 !important;
+          color: #ffffff;
+          line-height: 1.2;
+        }
+        
+        .date-text {
+          font-size: var(--font-size-xs) !important;
+          white-space: normal;
+          margin: 0;
+          color: rgba(230,244,255,0.8);
+        }
+        
+        /* Mobile Position Header */
+        .position-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--spacing-xs);
+          margin-bottom: var(--spacing-sm);
+        }
+        
+        .position-title {
+          font-size: var(--font-size-sm) !important;
+        }
+        
+        .position-date {
+          font-size: var(--font-size-xs) !important;
+        }
+        
+        .bullet-list {
+          font-size: var(--font-size-xs) !important;
+          padding-left: 16px;
+          margin-bottom: var(--spacing-sm);
+        }
+        
+        .bullet-list li {
+          margin-bottom: 6px;
+          line-height: 1.4;
+        }
+      }
+    }
+    
+    /* Mobile Font Size Reductions */
+    .section-title {
+      font-size: var(--responsiveFontSizes-mobile-sectionTitle) !important;
+    }
+    
+    .section-subtitle {
+      font-size: var(--responsiveFontSizes-mobile-sectionSubtitle) !important;
+    }
+    
+    .chat-title {
+      font-size: var(--responsiveFontSizes-mobile-cardTitle) !important;
+    }
+    
+    .chat-text {
+      font-size: var(--responsiveFontSizes-mobile-cardDescription) !important;
+    }
+    
+    .chat-meta {
+      font-size: 11px !important;
+    }
+    
+    /* Mobile collapsed card adjustments */
+    .personal-card.collapsed {
+      margin-bottom: var(--spacing-sm);
+      
+      .chat-bubble.collapsed {
+        max-height: 90px;
+        padding: 10px 12px;
+      }
+    }
+    
+    .company-title {
+      font-size: 14px !important;
+    }
+    
+    .date-text {
+      font-size: 11px !important;
+    }
+    
+    .position-title {
+      font-size: 13px !important;
+    }
+    
+    .position-date {
+      font-size: 11px !important;
+    }
+    
+    .bullet-list {
+      font-size: 11px !important;
+    }
+    
+    .bullet-list li {
+      font-size: 11px !important;
+    }
+  }
 }

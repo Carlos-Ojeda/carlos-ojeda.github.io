@@ -1,70 +1,180 @@
-# Getting Started with Create React App
+# Carlos Ojeda - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React, featuring internationalization support and best practices in component architecture.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Multi-language Support**: Full internationalization with English and Spanish translations
+- **Modern Design**: Clean, professional design with smooth animations
+- **Responsive**: Optimized for all device sizes
+- **Performance**: Optimized with React best practices and code splitting
+- **Accessibility**: Built with accessibility in mind
 
-### `npm start`
+## 🚀 Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React 18** - Modern React with hooks and functional components
+- **Ant Design** - UI component library
+- **SCSS** - Advanced CSS with variables and mixins
+- **i18next** - Internationalization framework
+- **React Icons** - Icon library
+- **TSParticles** - Interactive particle animations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+src/
+├── components/          # React components
+│   ├── AboutMe/        # About section with employment history
+│   ├── Contact/        # Contact form and information
+│   ├── Footer/         # Site footer
+│   ├── Header/         # Navigation header with language selector
+│   ├── Landing/        # Hero section with particles
+│   ├── LanguageSelector/ # Language switching component
+│   ├── LoadingProvider/ # Loading state management
+│   ├── Projects/       # Projects showcase
+│   └── Skills/         # Skills and technologies
+├── config/             # Configuration files
+│   └── constants.js    # App constants and settings
+├── data/               # Data files
+│   ├── employmentData.js # Employment and education data
+│   └── projectsData.js # Projects information
+├── hooks/              # Custom React hooks
+│   ├── useScrollSpy.js # Scroll spy functionality
+│   ├── useSmoothScroll.js # Smooth scrolling
+│   └── useTranslations.js # Translation utilities
+├── i18n/               # Internationalization
+│   ├── index.js        # i18n configuration
+│   └── locales/        # Translation files
+│       ├── en.json     # English translations
+│       └── es.json     # Spanish translations
+└── styles/             # Global styles
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎯 Key Improvements
 
-### `npm run build`
+### 1. Internationalization (i18n)
+- Complete translation system with English and Spanish support
+- Centralized translation files for easy content management
+- Dynamic language switching with persistent storage
+- Automatic language detection based on browser settings
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Component Architecture
+- **Separation of Concerns**: Data, logic, and presentation separated
+- **Reusable Components**: Modular components with clear responsibilities
+- **Custom Hooks**: Encapsulated logic for scroll handling, translations, etc.
+- **Constants Management**: Centralized configuration for easy maintenance
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Performance Optimizations
+- **Memoization**: Strategic use of `useMemo` and `useCallback`
+- **Code Splitting**: Lazy loading of components where appropriate
+- **Optimized Rendering**: Reduced unnecessary re-renders
+- **Efficient Data Management**: Centralized data files with translation support
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Best Practices
+- **Type Safety**: Proper prop validation and error handling
+- **Accessibility**: ARIA labels, semantic HTML, keyboard navigation
+- **Responsive Design**: Mobile-first approach with breakpoint management
+- **Clean Code**: Consistent naming conventions and code organization
 
-### `npm run eject`
+## 🛠️ Development
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/carlos-ojeda/carlos-ojeda.github.io.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Navigate to the portfolio directory
+cd portfolio
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Start development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Building for Production
+```bash
+# Build the project
+npm run build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Deploy to GitHub Pages
+npm run deploy
+```
 
-### Code Splitting
+## 🌐 Adding New Languages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Create a new translation file in `src/i18n/locales/`
+2. Add the language to the `LanguageSelector` component
+3. Update the i18n configuration in `src/i18n/index.js`
 
-### Analyzing the Bundle Size
+## 📝 Content Management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+All content is managed through translation files:
+- **Text Content**: Edit `src/i18n/locales/en.json` and `src/i18n/locales/es.json`
+- **Project Data**: Update `src/data/projectsData.js`
+- **Employment Data**: Modify `src/data/employmentData.js`
+- **Configuration**: Adjust `src/config/constants.js`
 
-### Making a Progressive Web App
+## 🎨 Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Styling
+- Global styles: `src/styles/`
+- Component-specific styles: `src/components/[ComponentName]/_component.scss`
+- Variables and mixins: `src/styles/_variables.scss`
 
-### Advanced Configuration
+### Configuration
+- App constants: `src/config/constants.js`
+- Animation settings: `ANIMATION_CONFIG`
+- Particles configuration: `PARTICLES_CONFIG`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📱 Responsive Design
 
-### Deployment
+The portfolio is fully responsive with breakpoints:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔧 Available Scripts
 
-### `npm run build` fails to minify
+- `npm start` - Start development server
+- `npm run build` - Build for production
+- `npm run test` - Run tests
+- `npm run deploy` - Deploy to GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### Quick Start
+
+```bash
+# Clone and setup
+git clone https://github.com/carlos-ojeda/carlos-ojeda.github.io.git
+cd carlos-ojeda.github.io/portfolio
+npm install
+npm start
+```
+
+## 📞 Contact
+
+- **Email**: carlosnoel_ojedaa@icloud.com
+- **GitHub**: [@carlos-ojeda](https://github.com/carlos-ojeda)
+
+## 📚 Resources
+
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+
+---
+
+Built with ❤️ and React
