@@ -1,0 +1,47 @@
+.salute-title {
+  font-size: var(--font-size-2xl);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  text-align: center;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
+  
+  .flickering-cursor {
+    animation: blink 1s infinite steps(1);
+    margin-left: 2px;
+    color: #1890ff;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .salute-title {
+    min-height: 3.5rem;
+    /* Font size stays consistent using var(--font-size-2xl) */
+  }
+}

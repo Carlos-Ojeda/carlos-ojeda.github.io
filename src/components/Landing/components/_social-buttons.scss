@@ -1,0 +1,64 @@
+.social-buttons {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  margin-top: var(--spacing-3xl);
+  opacity: 0;
+  animation: fadeInUp var(--components-animations-fadeInDuration) var(--components-landing-fadeInDelay-buttons) forwards;
+
+  .social-button {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--borderRadius-full);
+    border: none;
+    background-color: var(--colors-background-buttonSecondary);
+    color: var(--colors-text-light);
+    cursor: pointer;
+    transition: all var(--transitions-normal) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--typography-fontSize-lg);
+    
+    &:hover {
+      transform: var(--components-buttons-cta-transformHover);
+      background-color: var(--colors-background-hoverLight);
+      
+      &.email-button {
+        color: var(--colors-primary-main);
+      }
+      
+      &.github-button {
+        color: var(--colors-text-primary);
+      }
+      
+      &.linkedin-button {
+        color: var(--colors-primary-main);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .social-buttons {
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xl);
+    
+    .social-button {
+      width: 48px;
+      height: 48px;
+      font-size: var(--responsiveFontSizes-mobile-contactIcon);
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--components-landing-fadeInDistance));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

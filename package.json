@@ -1,0 +1,87 @@
+{
+  "name": "carlos-ojeda-portfolio",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A modern, responsive portfolio website built with React, featuring internationalization support and best practices in component architecture",
+  "keywords": [
+    "react",
+    "portfolio",
+    "internationalization",
+    "i18n",
+    "responsive",
+    "modern",
+    "ant-design",
+    "scss",
+    "web-development"
+  ],
+  "author": {
+    "name": "Carlos Ojeda",
+    "email": "carlosnoel_ojedaa@icloud.com",
+    "url": "https://github.com/carlos-ojeda"
+  },
+  "license": "MIT",
+  "homepage": "https://carlos-ojeda.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlos-ojeda/carlos-ojeda.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/carlos-ojeda/carlos-ojeda.github.io/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.0.0",
+    "@emailjs/browser": "^4.4.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
+    "antd": "^4.21.4",
+    "i18next": "^25.3.4",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^15.6.1",
+    "react-icons": "^4.4.0",
+    "react-scripts": "^5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.9.1",
+    "tsparticles-slim": "^2.12.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "sass": "^1.90.0"
+  }
+}

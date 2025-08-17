@@ -1,0 +1,313 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "learnMore": "Learn more",
+    "exploreFreely": "Alternative navigation",
+    "scrollToExplore": "Scroll to explore"
+  },
+  "header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "skills": "Skills",
+      "contact": "Contact"
+    }
+  },
+  "landing": {
+    "greeting": "Hi There!",
+    "subtitle": "I'm Carlos Ojeda, a Machine Learning Engineer",
+    "description": "Passionate about understanding the world and solving complex challenges through the power of Human, Machine & Deep Learning",
+    "salute": {
+      "greeting1": "Hi there!",
+      "greeting2": "Hello!",
+      "greeting3": "Welcome!",
+      "greeting4": "Greetings!"
+    }
+  },
+  "aboutMe": {
+    "title": "About Me",
+    "subtitle": "My journey in technology and science",
+    "greeting": "Good morning",
+    "greetingAfternoon": "Good afternoon",
+    "greetingEvening": "Good evening",
+    "personalMessage": {
+      "title": "Growing up in the wide-open landscapes of Baja California taught me to honor nature, humanity, and science. This formative setting fostered a curiosity that now drives my exploration of disciplines ranging from nanotechnology to astronomy, biology, and anthropology ~ always through the lens of mathematics and data analysis.",
+      "subtitle": "My aim is to derive insights that enable the prudent optimization of resources and processes wherever possible."
+    },
+    "employment": {
+      "title": "Turning ideas into impact 💼",
+      "description": "I've contributed to large-scale technology projects, building AI-powered and web solutions that deliver measurable results and lasting value.",
+      "positions": {
+        "c3ai": {
+          "company": "C3.ai",
+          "date": "Nov 2024 – May 2025",
+          "type": "Full-time",
+          "positions": [
+            {
+              "title": "Software Engineer",
+              "description": [
+                "Increased backend test coverage from ~60% to ~80%, launched PSR test workflows, authored onboarding documentation, and created pytest suites for new ML explainability features.",
+                "Reduced page load times by ~35% through bundle profiling, code splitting, and close coordination with cross-functional teams (Data Science, UI, Infrastructure)."
+              ]
+            }
+          ]
+        },
+        "tcs": {
+          "company": "Tata Consultancy Services",
+          "date": "Jan 2023 – Nov 2024",
+          "location": "Mexico",
+          "type": "Full-time",
+          "positions": [
+            {
+              "title": "Machine Learning Associate",
+              "date": "Nov 2023 – Nov 2024",
+              "description": [
+                "Developed and deployed classification and prediction services on GCP and Azure ML using TensorFlow Serving and LIME for model interpretability."
+              ]
+            },
+            {
+              "title": "Front-End Developer",
+              "date": "Jan 2023 – Nov 2023",
+              "description": [
+                "Built and deployed modern UI components for Home Depot's e-commerce platform using React, Ant Design, and GCP. Enhanced CI/CD pipelines through GitHub Actions."
+              ]
+            }
+          ]
+        },
+        "nextline": {
+          "company": "NextLine",
+          "date": "Oct 2022 – Dec 2022",
+          "location": "Mexico",
+          "type": "Full-time",
+          "positions": [
+            {
+              "title": "Junior Back-End Developer",
+              "description": [
+                "Developed back-end authentication endpoints and database models using Node.js, Express, and MongoDB.",
+                "Created test plans aligned with ISO/IEC/IEEE 29119 standards and deployed the application on AWS, supporting over 200k IMSS users."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "education": {
+      "title": "Education & Certifications 🎓",
+      "description": "I've pursued continuous learning in various fields to enhance my technical and soft skills.",
+      "institutions": {
+        "uabc": {
+          "company": "Universidad Autónoma de Baja California",
+          "date": "2018 – 2022",
+          "location": "Mexico",
+          "type": "Bachelor's Degree",
+          "positions": [
+            {
+              "title": "Computer Science",
+              "description": [
+                "Focused on software engineering, algorithms, and data structures.",
+                "Completed capstone project on machine learning applications."
+              ]
+            }
+          ]
+        },
+        "online": {
+          "company": "Online Courses & Certifications",
+          "date": "2020 – Present",
+          "location": "Online",
+          "type": "Continuous Learning",
+          "positions": [
+            {
+              "title": "Machine Learning Specialization",
+              "description": [
+                "Completed comprehensive ML courses on Coursera and edX.",
+                "Certified in TensorFlow and PyTorch frameworks."
+              ]
+            },
+            {
+              "title": "Web Development",
+              "description": [
+                "Advanced React, Node.js, and cloud computing courses.",
+                "Full-stack development certifications from various platforms."
+              ]
+            }
+          ]
+        },
+        "tec": {
+          "company": "Tec de Monterrey",
+          "date": "2018 – 2022",
+          "location": "Mexico",
+          "type": "University",
+          "positions": [
+            {
+              "title": "Computer Science",
+              "description": [
+                "Focused on software engineering, algorithms, and data structures.",
+                "Completed capstone project on machine learning applications."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "certifications": {
+      "title": "Certifications",
+      "description": "Professional certifications and specialized training.",
+      "institutions": {
+        "mit": {
+          "location": "Online",
+          "type": "Professional Certification"
+        },
+        "duke": {
+          "location": "Online",
+          "type": "Professional Certification"
+        },
+        "ibm": {
+          "location": "Online",
+          "type": "Professional Certification"
+        },
+        "aws": {
+          "location": "Online",
+          "type": "Professional Certification"
+        },
+        "scrumstudy": {
+          "location": "Online",
+          "type": "Professional Certification"
+        },
+        "learnquest": {
+          "location": "Online",
+          "type": "Professional Certification"
+        }
+      }
+    },
+    "images": {
+      "observatory": "San Pedro Martir National Astronomical Observatory Photo",
+      "sunsetBeach": "Sunset on the beach of the Pacific Ocean",
+      "forest": "Forest Photo",
+      "sunsetPole": "Sunset on top of a pole",
+      "vineyards": "Vineyards photo",
+      "snowSmile": "Smiling surrounded by snow",
+      "beachJump": "Jumping on the beach, in a sunset",
+      "hikingForest": "Showing the forest, at a hiking activity",
+      "coastHiking": "Hiking on the Baja California coast",
+      "bufadora": "Visiting La Bufadora, tourist space",
+      "palmTrees": "Picture of palm trees"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "My work in technology and innovation",
+    "categories": {
+      "all": "All Projects",
+      "machineLearning": "Machine Learning",
+      "webDevelopment": "Web Development",
+      "mobileApps": "Mobile Apps",
+      "gameDevelopment": "Game Development",
+      "iot": "IoT"
+    },
+    "filterPlaceholder": "Filter by category",
+    "moreSkills": "+{{count}} more",
+    "modal": {
+      "projectDescription": "Project Description",
+      "technologiesUsed": "Technologies Used",
+      "viewMoreImages": "View more images"
+    },
+    "items": {
+      "peripheralLoans": {
+        "title": "Peripheral Loans",
+        "description": "Platform that manages device loans within IBM's Guadalajara.",
+        "detailedDescription": "Engineered a Management System to facilitate device lending to IBM's Guadalajara employees during the Covid era. Orchestrated the design and development of the User Interface as the Front-End specialist. Used Containers to deploy a scalable Back-End supporting more than 2,000 device records. Rigorously tested functionalities using Unitary Tests, Postman and Cypress, ensuring seamless alignment with user requirements.",
+        "category": "Web Development"
+      },
+      "urbanMobility": {
+        "title": "Urban Mobility Simulation",
+        "description": "Approach to solve Mexico's urban mobility problem by reducing vehicular congestion.",
+        "detailedDescription": "Developed an agent-based simulation platform to analyze and reduce vehicular congestion in Mexican cities. Built a real-time visualization environment in Unity (C#) to display traffic flows and live KPIs. Implemented the simulation engine in Python with AgentPy to model heterogeneous agents and test policies such as adaptive traffic signals and dedicated lanes. Deployed a Flask API on IBM Cloud to orchestrate simulations, stream results via REST/WebSockets, and enable interactive scenario configuration from the Unity interface.",
+        "category": "Machine Learning"
+      },
+      "foodBank": {
+        "title": "FoodBank",
+        "description": "Android app to donate money and food in Jalisco, Mexico.",
+        "detailedDescription": "Donation system to raise money and food for more than 30,000 families in Jalisco, Mexico. Created an Android app using Kotlin with a feature to donate food either by delivery or in person to the Food Bank Center. Used Firebase DB to track donations and manage thousands of records.",
+        "category": "Mobile Apps"
+      },
+      "hiredocs": {
+        "title": "Hiredocs",
+        "description": "Web App to track the Hiring Process in the Talent Acquisition Team at Amdocs.",
+        "detailedDescription": "Contributed to the creation of a Tracking System for the Hiring Process at Amdocs. Connecting teams across global locations and as a key member of the Scrum Development Team, I played a role in designing and implementing the Front-End, while also integrating Back-End features to ensure robust Data Protection. Additionally, presented the system to Amdocs executives in Guadalajara, showcasing its capabilities and functionalities.",
+        "category": "Web Development"
+      },
+      "endlessRunner": {
+        "title": "Endless Runner",
+        "description": "A platformer game with an endless runner and collectible objects.",
+        "category": "Game Development"
+      },
+      "maraca": {
+        "title": "Caraca sanitizer",
+        "description": "IoT device to manage the number of people inside a building due to Covid-19.",
+        "category": "IoT"
+      },
+      "lexicalAnalyzer": {
+        "title": "Parallel Lexical Analyzer",
+        "description": "State Machine to highlight reserved words in .txt files.",
+        "category": "Machine Learning"
+      },
+      "streamStagePrediction": {
+        "title": "Stream Stage Prediction with ML",
+        "description": "Built ML models to predict river stage and discharge from daylight images, in collaboration with the University of Nebraska – Lincoln research team.",
+        "detailedDescription": "Collaborated with University of Nebraska – Lincoln to develop Machine and Deep Learning models for predicting stream stage and discharge from the North Platte River, State Line Weir using daylight images taken at one hour intervals from 2012 to 2019. Loss metrics were considered, selected and used to evaluate different models trained with the 40,000+ river images and features extracted in Python (EfficientNetB0, ResNet101, MLP, SVR and RFR).",
+        "category": "Machine Learning"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I work with",
+    "categories": {
+      "programmingLanguages": "Programming Languages",
+      "frameworks": "Frameworks & Libraries",
+      "databases": "Databases",
+      "cloudPlatforms": "Cloud Platforms",
+      "tools": "Tools & Others"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "form": {
+      "title": "Send me a message",
+      "description": "Have an interesting idea or want to collaborate on a project? Don't hesitate to reach out! I'm always open to new opportunities and exciting collaborations.",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can I help you?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or idea...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "You can reach me through any of these channels. I'm available to discuss projects, collaborations or simply to connect!",
+      "email": "Email",
+      "location": "Location",
+      "availability": "Availability"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Carlos Ojeda. Made with ❤️ and shared under the MIT License.",
+    "openSource": "Open Source",
+    "repository": "Repository",
+    "reportIssues": "Report Issues",
+    "suggestFeatures": "Suggest Features",
+    "forkProject": "Fork Project",
+    "builtWith": "Built With",
+    "contact": "Contact",
+    "freeToUse": "Feel free to use, modify, and share."
+  }
+}
