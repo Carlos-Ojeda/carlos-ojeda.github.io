@@ -1,0 +1,34 @@
+@use './components/Header/header';
+@use './components/Landing/landing';
+@use './components/Landing/SaluteAnimation/salute-animation';
+@use './components/AboutMe/about-me';
+@use './components/AboutMe/Collage/collage';
+@use './components/Projects/projects';
+@use './components/Skills/skills';
+@use './components/Contact/contact';
+@use './components/Footer/footer';
+
+/* Global container styles */
+.App {
+  width: 100%;
+}
+
+/* Content container for centering */
+.content-container {
+  max-width: 83.333333%; /* 5/6 = 83.333333% */
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .content-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    max-width: 100%;
+  }
+}

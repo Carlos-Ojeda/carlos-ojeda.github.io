@@ -1,4 +1,4 @@
-@import './components/_social-buttons.scss';
+@use './components/social-buttons';
 
 .landing {
   background: var(--gradient-dark);

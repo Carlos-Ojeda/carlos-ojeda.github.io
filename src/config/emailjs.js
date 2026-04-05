@@ -1,10 +1,21 @@
 // EmailJS Configuration
-// Get these values from your EmailJS account: https://www.emailjs.com/
+// Values are loaded from environment variables.
+// Copy .env.example to .env.local and fill in your credentials.
+
+if (
+    !import.meta.env.VITE_EMAILJS_PUBLIC_KEY ||
+    !import.meta.env.VITE_EMAILJS_SERVICE_ID ||
+    !import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+) {
+    console.warn(
+        '[EmailJS] Missing environment variables. Copy .env.example to .env.local and fill in your credentials.'
+    );
+}
 
 export const EMAILJS_CONFIG = {
-    PUBLIC_KEY: "4j7aF6Ovownassmv2",
-    SERVICE_ID: "jSP5bFg00I6S68K70zL1h",
-    TEMPLATE_ID: "template_diuc2at"
+    PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
 };
 
 // Template variables that will be available in your EmailJS template

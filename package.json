@@ -2,7 +2,7 @@
   "name": "carlos-ojeda-portfolio",
   "version": "0.1.0",
   "private": false,
-  "description": "A modern, responsive portfolio website built with React, featuring internationalization support and best practices in component architecture",
+  "description": "A modern, responsive portfolio website",
   "keywords": [
     "react",
     "portfolio",
@@ -48,25 +48,17 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^15.6.1",
     "react-icons": "^4.4.0",
-    "react-scripts": "^5.0.1",
     "react-tsparticles": "^2.12.2",
     "tsparticles": "^3.9.1",
     "tsparticles-slim": "^2.12.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": {
     "production": [
@@ -81,7 +73,9 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
     "gh-pages": "^6.3.0",
-    "sass": "^1.90.0"
+    "sass": "^1.90.0",
+    "vite": "^5.4.21"
   }
 }

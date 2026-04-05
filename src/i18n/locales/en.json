@@ -289,7 +289,14 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully!",
-      "error": "Error sending message. Please try again."
+      "error": "Error sending message. Please try again.",
+      "validation": {
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Please enter a valid email",
+        "subjectRequired": "Please enter a subject",
+        "messageRequired": "Please enter your message"
+      }
     },
     "info": {
       "title": "Contact Information",

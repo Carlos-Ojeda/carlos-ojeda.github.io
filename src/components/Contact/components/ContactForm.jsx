@@ -67,9 +67,9 @@ const ContactForm = () => {
                         <Form.Item
                             name="name"
                             label={t('contact.form.name')}
-                            rules={[{ required: true, message: 'Please enter your name' }]}
+                            rules={[{ required: true, message: t('contact.form.validation.nameRequired') }]}
                         >
-                            <Input 
+                            <Input
                                 placeholder={t('contact.form.namePlaceholder')}
                                 size="large"
                             />
@@ -80,33 +80,33 @@ const ContactForm = () => {
                             name="email"
                             label={t('contact.form.email')}
                             rules={[
-                                { required: true, message: 'Please enter your email' },
-                                { type: 'email', message: 'Please enter a valid email' }
+                                { required: true, message: t('contact.form.validation.emailRequired') },
+                                { type: 'email', message: t('contact.form.validation.emailInvalid') }
                             ]}
                         >
-                            <Input 
+                            <Input
                                 placeholder={t('contact.form.emailPlaceholder')}
                                 size="large"
                             />
                         </Form.Item>
                     </Col>
                 </Row>
-                
+
                 <Form.Item
                     name="subject"
                     label={t('contact.form.subject')}
-                    rules={[{ required: true, message: 'Please enter a subject' }]}
+                    rules={[{ required: true, message: t('contact.form.validation.subjectRequired') }]}
                 >
-                    <Input 
+                    <Input
                         placeholder={t('contact.form.subjectPlaceholder')}
                         size="large"
                     />
                 </Form.Item>
-                
+
                 <Form.Item
                     name="message"
                     label={t('contact.form.message')}
-                    rules={[{ required: true, message: 'Please enter your message' }]}
+                    rules={[{ required: true, message: t('contact.form.validation.messageRequired') }]}
                 >
                     <TextArea 
                         placeholder={t('contact.form.messagePlaceholder')}
